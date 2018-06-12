@@ -10,7 +10,7 @@ const config = [{
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'rc-time-picker-' + version + '.js',
-    library: 'RCTimePicker',
+    library: 'TimePicker',
     libraryTarget: 'umd'
   },
   module: {
@@ -35,6 +35,12 @@ const config = [{
     new ExtractTextPlugin('rc-time-picker-' + version + '.css')
   ],
   externals: {
+    "moment": {
+      commonjs: "moment",
+      commonjs2: "moment",
+      amd: "moment",
+      root: "moment"
+    },
     "react": {
       commonjs: "react",
       commonjs2: "react",
@@ -47,6 +53,9 @@ const config = [{
       amd: "react-dom",
       root: "ReactDOM"
     }
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
   }
 }, {
   entry: './src/index.js',
@@ -87,6 +96,12 @@ const config = [{
     new ExtractTextPlugin('rc-time-picker-' + version + '.min.css')
   ],
   externals: {
+    "moment": {
+      commonjs: "moment",
+      commonjs2: "moment",
+      amd: "moment",
+      root: "moment"
+    },
     "react": {
       commonjs: "react",
       commonjs2: "react",
@@ -99,6 +114,9 @@ const config = [{
       amd: "react-dom",
       root: "ReactDOM"
     }
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
   }
 }];
 
