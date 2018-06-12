@@ -33,6 +33,7 @@
     "port": 8011
   },
   "scripts": {
+    "release": "webpack",
     "dist": "rc-tools run dist",
     "build": "rc-tools run build",
     "gh-pages": "rc-tools run gh-pages",
